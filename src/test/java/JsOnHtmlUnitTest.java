@@ -9,7 +9,7 @@ import static com.codeborne.selenide.WebDriverRunner.url;
  * default for HtmlUnit: javaScript is off
  * test pass on Chrome
  */
-public class JsTest extends AbstractWebTest {
+public class JsOnHtmlUnitTest extends AbstractWebTest {
 
     /** Test fail on HtmlUnit with JS enabled */
     @Test

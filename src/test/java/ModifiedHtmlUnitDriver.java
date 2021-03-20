@@ -11,10 +11,6 @@ public class ModifiedHtmlUnitDriver extends HtmlUnitDriver {
         super(BrowserVersion.CHROME);
     }
 
-    public ModifiedHtmlUnitDriver(BrowserVersion browserVersion) {
-        super(browserVersion);
-    }
-
     protected WebClient modifyWebClient(WebClient client) {
         client.setCssErrorHandler(new ErrorHandler() {
             @Override
@@ -37,9 +33,5 @@ public class ModifiedHtmlUnitDriver extends HtmlUnitDriver {
         client.getOptions().setUseInsecureSSL(true);
 
         return client;
-    }
-
-    public WebClient retrieveWebClient() {
-        return getWebClient();
     }
 }

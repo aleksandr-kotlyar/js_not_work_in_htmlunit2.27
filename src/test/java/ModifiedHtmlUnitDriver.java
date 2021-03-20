@@ -1,9 +1,10 @@
+import com.gargoylesoftware.css.parser.CSSErrorHandler;
+import com.gargoylesoftware.css.parser.CSSException;
+import com.gargoylesoftware.css.parser.CSSParseException;
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-import org.w3c.css.sac.CSSException;
-import org.w3c.css.sac.CSSParseException;
-import org.w3c.css.sac.ErrorHandler;
+
 
 public class ModifiedHtmlUnitDriver extends HtmlUnitDriver {
 
@@ -12,7 +13,7 @@ public class ModifiedHtmlUnitDriver extends HtmlUnitDriver {
     }
 
     protected WebClient modifyWebClient(WebClient client) {
-        client.setCssErrorHandler(new ErrorHandler() {
+        client.setCssErrorHandler(new CSSErrorHandler() {
             @Override
             public void warning(CSSParseException arg0) throws CSSException {
             }
